@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+
+    <title>Tudo sobre google glass</title>
+<script language="javascript" src="_javascript/funcoes.js"></script>
+<script>
+    function calc_total(){
+        var qtd = parseInt(docment.getElementById('cqtd').value)
+        tot = qtd * 1500;
+        document.getElementById('ctot').value = tot;
+    }
+</script>
+</head>
+
+<body>
+    <div id="interface">
+    
+        <header id="cabecalho">
+            <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+    
+            <img id="icone" src="_imagens/glass-oculos-preto-peq.png" alt="Google glass">
+    
+    <nav id="menu">   
+        <h1>Menu Principal</h1>
+        <ul type="disk">
+             <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+    
+             <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+    
+             <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+    
+             <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+    
+             <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+        </ul>
+    </nav>
+    
+        </header>
+    
+        <section id="corpo-full">
+            <article id="noticia-principal">
+               <header id="cabecalho-artigo">
+                   <hgroup>
+                       <h3>Fale Conosco > Contato</h3>
+                       <h1>Formulário de Contato</h1>
+                       <h2>por Vinicius Menezes</h2>
+                       <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                   </hgroup>
+                   </header>
+
+    <form method="post" id="fcontato" action="mailto:viniciusmenezes200415@gmail.com" oninput="calc_total();">
+
+        <fieldset id="usuario">
+            <legend>Identificação do Usuário</legend>
+                <p><label for="cnome">Nome: </label> <input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome completo"></p>
+
+                <p><label for="csenha">Senha: </label> <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="Senha"></p>
+
+                <p><label for="cemail">E-mail:</label> <input type="email" name="temail" id="cemail" size="20" maxlength="40" placeholder="Email"></p>
+
+                <fieldset>
+                    <legend>Sexo:</legend>
+                       <input type="radio" name="tmas" id="cmas"><label for="cmas">Masculino</label><br>
+                       <input type="radio" name="tfem" id="cfen"><label for="cfem">Feminino</label>
+                </fieldset>
+                <p><label for="cdata">Data de Nascimento:</label> <input type="date" name="tdata" id="cdata"></p>
+        </fieldset>
+        
+        <fieldset id="endereco">
+            <legend>Endereço do Usuário</legend>
+                <p><label for="crua">Logradouro:</label> <input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="Rua, Av, Travessa..."></p>
+                <p><label for="cnumero">Número:</label> <input type="number" name="tnumero" id="cnumero" min="0" max="1999"></p>
+                <p><label for="cestado">Estado:</label><select name="testado" id="cestado">
+                    <option value="BA">Bahia</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="PR">Paraná</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="AC">Acre</option>
+                    <option value="SP">São Paulo</option>
+
+                </select></p>
+                <p><label for="ccidade">Cidade:</label>
+                <input type="text" name="tcidade" id="ccidade" maxlength="40" size="20" placeholder="Cidade" list="cidades"></p>
+                <datalist id="cidades">
+                    <option value="Salvador"></option>
+                    <option value="Feira de Santana"></option>
+                    <option value="Lauro de Freitas"></option>
+                    <option value="Cadeias"></option>
+                </datalist>
+        </fieldset>
+        
+        <fieldset id="mensagem">
+            <legend>Mensagem do Usuário</legend>
+                <p><label for="curg">Grau de Urgência:</label>
+                Min<input type="range" name="turg" id="curg" min="0" max="10" step="2">Max</p>
+
+                <p><label for="cmsg">Mensagem:</label>
+                <textarea name="tmsg" id="cmsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+        </fieldset>
+        
+        <fieldset id="pedido">
+            <legend>Quero um Google Glass</legend>
+
+                <p><input type="checkbox" name="tped" id="cped" checked><label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+
+                <p><label for="ccolor">Cor:</label><input type="color" name="tcolor" id="ccolor" value="#bebebe"></p>
+
+                <p><label for="cqtd">Quantidade:</label><input type="number" name="tqtd" id="cqtd" min="0" max="5" value="0"></p>
+
+                <p><label for="ctot">Preço Total: R$</label><input type="text" name="ttot" id="ctot" placeholder="Total a Pagar" readonly></p>
+        </fieldset>
+        
+        <input type="image" name="tenviar" src="_imagens/botao-enviar.png">
+
+    </form>
+    
+</article>
+</section>
+<footer id="rodape"> <!--roda pé-->
+    <p>
+        Copyright 2023 - by Vinicius Menezes<br>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/ygnezes/" target="_blank">Instagram</a> | <a href="https://github.com/nezesxd" target="_blank">Github</a>
+    </p>
+ </footer>
+</body>
